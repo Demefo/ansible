@@ -1,0 +1,10 @@
+- name: Pull {{ db_type }} Docker image
+  docker_image:
+    name: "{{ db_type }}"
+    source: pull
+
+- name: Run {{ db_type }} container
+  docker_container:
+    name: "{{ 'pgadmin' if db_type == 'dpage/pgadmin4' else db_type }}"
+    image: "{{ db_type }}"
+    state: started

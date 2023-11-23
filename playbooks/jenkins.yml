@@ -1,0 +1,17 @@
+---
+- name: Install Jenkins
+  hosts: all
+  become: yes
+  
+
+  roles:
+    - role: geerlingguy.java
+    - role: geerlingguy.jenkins
+
+  tasks:
+    - name: Get Jenkins initial Admin Password
+      command: cat /var/lib/jenkins/secrets/initialAdminPassword
+      register: result
+
+    - debug: msg="The Jenkins initial admin password is {{ result.stdout }}"
+...

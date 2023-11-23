@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  author: Rudi_Demefo
+  description: Role to pull and run Docker images for various databases
+  company: EK_TECH Soft.
+  license: free
+  min_ansible_version: 2.4
+  platforms:
+  - name: Ubuntu
+    versions:
+    - xenial
+    - bionic
+  galaxy_tags:
+    - docker
+    - database
+dependencies: []

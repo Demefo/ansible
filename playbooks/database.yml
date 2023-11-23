@@ -1,0 +1,21 @@
+---
+- name: Containerize Databases
+  hosts: all
+  become: yes 
+  become_user: root
+  roles:
+    - role: db
+      vars:
+        db_type: mysql
+    - role: db
+      vars:
+        db_type: postgres
+    - role: db
+      vars:
+        db_type: mongo
+    - role: db
+      vars:
+        db_type: redis
+    - role: db
+      vars:
+        db_type: dpage/pgadmin4
